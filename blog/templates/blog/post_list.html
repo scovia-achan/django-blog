@@ -10,16 +10,13 @@
         <h1><a href=".">Django blog</a></h1>
     </div>
 
-    <div>
-        <p>Published on 24.05.2020</p>
-        <h2><a href = "">My first post</a></h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quis error maiores ratione excepturi harum expedita debitis reiciendis similique voluptas illo, aut dolorem minima iste sapiente sit a fugit unde?</p>
-    </div>
+    {%for post in posts%}
+        <div>
+            <p>Published:{{post.published_date}}</p>
+            <h2><a href="">{{post.title}}</a></h2>
+            <p>{{post.text|linebreaksbr}}</p>
+        </div>    
 
-    <div>
-        <p>Published on 24.06.2020</p>
-        <h2><a href = "">My Second post</a></h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quis error maiores ratione excepturi harum expedita debitis reiciendis similique voluptas illo, aut dolorem minima iste sapiente sit a fugit unde?</p>
-    </div>
+    {%endfor%}
 </body>
 </html>
